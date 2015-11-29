@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 
 
 namespace Merge {
@@ -57,10 +58,13 @@ namespace Merge {
 			_v2 = 0;
 		}
 
+		public void Merge(string outputPath) {
+			File.WriteAllLines(outputPath, Merge());
+		}
+
 		public string[] Merge() {
-			
-			_findPositions(_source, _version1);
-			_findPositions(_source, _version2);
+			FindPositions(_source, _version1);
+			FindPositions(_source, _version2);
 
 			var result = new List<string>();
 			int si = 0, v1 = 0, v2 = 0;
@@ -98,7 +102,7 @@ namespace Merge {
 			return result.ToArray();
 		}
 
-		private void _findPositions(SourceLine[] source, VersionLine[] version) {
+		public static void FindPositions(SourceLine[] source, VersionLine[] version) {
 			var j = 0;
 			foreach (VersionLine ver in version) {
 				if (j >= source.Length) {

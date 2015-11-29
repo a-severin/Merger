@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests {
 	[TestClass]
-	public class MergeTests {
+	public class MergeTest {
 		[TestMethod]
 		public void TestCase1() {
 			var src = new[] { "line1", "line2", "line3" };
@@ -70,9 +70,9 @@ namespace Tests {
 
 		[TestMethod]
 		public void TestCase5() {
-			var src = new[] { "line1", "line2"};
+			var src = new[] { "line1", "line2" };
 			var ver1 = new[] { "line3", "line4" };
-			var ver2 = new[] { "line5", "line6"};
+			var ver2 = new[] { "line5", "line6" };
 
 			var merger = new Merger(src, ver1, ver2);
 			var result = merger.Merge();
@@ -100,6 +100,5 @@ namespace Tests {
 			Assert.AreEqual("line3", result[1]);
 			Assert.AreEqual("line2", result[2]);
 		}
-
 	}
 }

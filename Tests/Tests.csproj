@@ -54,7 +54,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="FindLinesIndexTests.cs" />
-    <Compile Include="MergeTests.cs" />
+    <Compile Include="MergeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

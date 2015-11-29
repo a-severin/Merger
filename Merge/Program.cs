@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Merge {
-	class Program {
-		static void Main(string[] args) {
-
+	internal class Program {
+		private static void Main(string[] args) {
 			if (args.Length != 4) {
 				Console.WriteLine("Required 4 arguments: <source-file>, <version1-file>, <version2-file>, <output-file>");
 				return;
@@ -44,7 +40,6 @@ namespace Merge {
 			} catch (IOException e) {
 				Console.Error.WriteLine(e.Message);
 			}
-			
 		}
 	}
 }

@@ -7,6 +7,28 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merge", "Merge\Merge.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{2BEA24F6-2083-455B-85BF-80ED24F5A256}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{255F8D9B-17C6-432D-9CE1-A8EA528971C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{52D850F0-5FF4-4AAE-B66A-C7028BEEC5CC}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\src\awesome_code.cs = Examples\src\awesome_code.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ver1", "ver1", "{0380D2BB-059C-43D4-9ED8-ECC58A9F925F}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\ver1\awesome_code.cs = Examples\ver1\awesome_code.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ver2", "ver2", "{3614F6DD-9847-4B37-BAC3-A0494C9F73D3}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\ver2\awesome_code.cs = Examples\ver2\awesome_code.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "merged", "merged", "{99159A44-457E-4903-92DF-FE5752F316EC}"
+	ProjectSection(SolutionItems) = preProject
+		Examples\merged\awesome_code.cs = Examples\merged\awesome_code.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +46,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{52D850F0-5FF4-4AAE-B66A-C7028BEEC5CC} = {255F8D9B-17C6-432D-9CE1-A8EA528971C5}
+		{0380D2BB-059C-43D4-9ED8-ECC58A9F925F} = {255F8D9B-17C6-432D-9CE1-A8EA528971C5}
+		{3614F6DD-9847-4B37-BAC3-A0494C9F73D3} = {255F8D9B-17C6-432D-9CE1-A8EA528971C5}
+		{99159A44-457E-4903-92DF-FE5752F316EC} = {255F8D9B-17C6-432D-9CE1-A8EA528971C5}
 	EndGlobalSection
 EndGlobal

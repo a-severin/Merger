@@ -98,9 +98,68 @@ namespace Tests {
 
 			Merger.FindPositions(src, ver);
 
+			Console.WriteLine(string.Join("\n", ver.AsEnumerable()));
+
+			Assert.AreEqual(0, ver[0].SourcePositon);
+			Assert.AreEqual(-1, ver[1].SourcePositon);
+			Assert.AreEqual(1, ver[2].SourcePositon);
+		}
+
+		[TestMethod]
+		public void TestCase8() {
+			var src = _createSourceLines(new[] { "{", "class Test{", "\n", "}", "}" });
+			var ver = _createVersionLines(new[] { "{", "class Test{", "public void Func1(){}", "}", "}" });
+
+			Merger.FindPositions(src, ver);
+
 			Assert.AreEqual(0, ver[0].SourcePositon);
 			Assert.AreEqual(1, ver[1].SourcePositon);
 			Assert.AreEqual(-1, ver[2].SourcePositon);
+			Assert.AreEqual(3, ver[3].SourcePositon);
+			Assert.AreEqual(4, ver[4].SourcePositon);
+		}
+
+		[TestMethod]
+		public void TestCase9() {
+			var src = _createSourceLines(new[] { "{", "\t{", "\t}", "}" });
+			var ver = _createVersionLines(new[] { "{", "\t{", "something", "\t}", "}" });
+
+			Merger.FindPositions(src, ver);
+
+			Assert.AreEqual(0, ver[0].SourcePositon);
+			Assert.AreEqual(1, ver[1].SourcePositon);
+			Assert.AreEqual(-1, ver[2].SourcePositon);
+			Assert.AreEqual(2, ver[3].SourcePositon);
+			Assert.AreEqual(3, ver[4].SourcePositon);
+		}
+
+		[TestMethod]
+		public void TestCase10() {
+			var src = _createSourceLines(new[] {
+				"{",
+				"class Test{",
+				"\n",
+				"}",
+				"}" });
+			var ver = _createVersionLines(new[] {
+				"{",
+				"class Test{",
+				"public void Func1(){",
+				"}",
+				"}",
+				"}"
+			});
+
+			Merger.FindPositions(src, ver);
+
+			Console.WriteLine(string.Join("\n", ver.AsEnumerable()));
+
+			Assert.AreEqual(0, ver[0].SourcePositon);
+			Assert.AreEqual(1, ver[1].SourcePositon);
+			Assert.AreEqual(-1, ver[2].SourcePositon);
+			Assert.AreEqual(-1, ver[3].SourcePositon);
+			Assert.AreEqual(3, ver[4].SourcePositon);
+			Assert.AreEqual(4, ver[5].SourcePositon);
 		}
 	}
 }

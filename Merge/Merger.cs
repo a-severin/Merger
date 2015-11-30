@@ -5,6 +5,9 @@ using System.Linq;
 
 
 namespace Merge {
+	/// <summary>
+	/// Merge lines of base code and two versions
+	/// </summary>
 	public class Merger {
 		private readonly SourceLine[] _source;
 		private readonly VersionLine[] _version1;

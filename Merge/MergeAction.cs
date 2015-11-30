@@ -2,6 +2,9 @@
 
 
 namespace Merge {
+	/// <summary>
+	/// Data strucutre for removing and inserting lines in code
+	/// </summary>
 	public class MergeAction {
 		public readonly List<Line> Lines = new List<Line>();
 
